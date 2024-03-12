@@ -7,6 +7,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "renderer.h"
+
 namespace TSR
 {
     class Application
@@ -21,6 +23,9 @@ namespace TSR
         virtual void OnRender() = 0;
         virtual void OnShutdown() = 0;
 
+        void SetPixel(int32_t x, int32_t y, Color color);
+        void SubmitTexture();
+
     private:
         void Initilalize();
         void Render();
@@ -34,6 +39,7 @@ namespace TSR
         bool m_isRunning;
 
         GLFWwindow* m_window {nullptr};
+        std::unique_ptr<Renderer> m_renderer;
     };
 }
 
