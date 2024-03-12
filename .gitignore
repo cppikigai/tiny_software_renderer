@@ -20,3 +20,4 @@ Release/
 *.tlog/
 GeneratedFiles/
 imgui.ini
+.DS_Store
